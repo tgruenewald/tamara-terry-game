@@ -5,7 +5,7 @@ using System.Linq;
 public class Player : MonoBehaviour {
 	public static int max_number_of_walls = 15;
 	public const int MAX_INVENTORY = 7;  // real max of 14
-	public float speed = 20f;
+	public float speed = 1f;
 	public int energy = 20;
 	public int energy_step = 5;
 	public Interactions Interactions;
@@ -156,7 +156,7 @@ public class Player : MonoBehaviour {
 			} else if (movex < 0 && facingRight) {
 				Flip ();
 			}
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (movex * 3f, movey * 3f);
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (movex * speed, movey * speed);
 			//		if(Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0) || Input.GetKeyDown("space")) // left or right
 			//		{
 			//			if (Wall.NumberOfWallsLeft() <= max_number_of_walls)
