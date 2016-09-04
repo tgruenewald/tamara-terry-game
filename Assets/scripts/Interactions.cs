@@ -119,6 +119,26 @@ public class Interactions : MonoBehaviour {
 		textStage++;
 		switch (tag) {
 
+		case "lady":
+			switch (textStage) {
+			case 1:
+				StartCoroutine (animate ("Captain Arugua?", "pc"));
+				return false;
+			case 2:
+				StartCoroutine (animate ("Finally.", "radio"));
+				return false;
+			case 3:
+				StartCoroutine (animate ("What's going on? I was just attacked by a microwave!", "pc"));
+				dialogueComplete = true;
+				textStage = 0;
+				return false;		
+			}
+			return false;
+//			StartCoroutine (animate ("I am a lady talking to you.", ""));
+//			dialogueComplete = true;
+//			textStage = 0;
+//			return false;
+
 		case "radio1":
 			StartCoroutine (animate ("This is Captain Arugua. Can anyone hear me? Over.", "radio"));
 			dialogueComplete = true;

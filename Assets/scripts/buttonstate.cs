@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class buttonstate : MonoBehaviour {
-
+	public Vector2 hotSpot = Vector2.zero;
+	private CursorMode cursorMode = CursorMode.Auto;
 	// Use this for initialization
 	void Start () {
 
@@ -43,9 +44,18 @@ public class buttonstate : MonoBehaviour {
 		}
 
 		if (!GameState.inBattle) {
+			switch (button.tag) {
+			case "sword":
+				Cursor.SetCursor (Resources.Load ("sword") as Texture2D, hotSpot, cursorMode);				
+				GameState.cursor = "sword";
+				break;
+			}			
 			button.tag = "available";
 			button.image.sprite = Resources.Load<Sprite>("Sprites/inventorycell");			
+
+
 		}
+
 
     }
     public void setButtonImage()

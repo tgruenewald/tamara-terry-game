@@ -5,6 +5,8 @@ using System.Collections;
 
 public static class GameState
 {
+	public static string cursor = "normal";
+
     public static GameObject player = null;
 	public static int playerHP = 100;
     public static GameObject introMusic = null;
